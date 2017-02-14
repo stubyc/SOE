@@ -20,20 +20,27 @@ public class Shipment {
     private String INSTRUCTIONS;
     
     /**
+     * Overloaded Constructor.
      * 
-     * @param items
-     * @param payment
-     * @param shipToAddress
-     * @param OrderNumber
-     * @param deliveryInstructions 
+     * Call this method when you have all of the data necessary to instantiate a completely filled out 
+     * shipment. This requires all of the parameters to be passed in order to construct the fleshed 
+     * out object. Possibly resource intensive.
+     * @param items : ArrayList of Items
+     * @param payment : double
+     * @param shipToAddress : String
+     * @param OrderNumber : String
+     * @param deliveryInstructions : String 
      */
     public Shipment(ArrayList<Item> items, double payment, String shipToAddress, String OrderNumber, String deliveryInstructions) {
         constructShipment(items, payment, shipToAddress, OrderNumber, deliveryInstructions);
     }
     
     /**
+     * Copy Constructor.
      * 
-     * @param ship 
+     * Makes a deep copy of the passed in Shipment. Literally clones an existing Shipment, so care must be taken
+     * to ensure data integrity. Will only populate fields that are populated on the passed in Shipment.
+     * @param ship : Shipment
      */
     public Shipment(Shipment ship) {
         setItems(ship.getItems());
@@ -41,6 +48,18 @@ public class Shipment {
         SHIPTO = ship.getShipToAddress();
         ORDERNUMBER = ship.getOrderNumber();
         INSTRUCTIONS = ship.getDeliveryInstructions();
+    }
+    
+    /**
+     * No argument constructor.
+     * 
+     * Creates a totally blank Shipment object. 
+     * WARNING! Creating an orphaned shipment (a shipment with no associated Order Number) can 
+     * have negative consequences on data integrity. Creating a blank shipment devoid of items 
+     * and an Order number may have negative effects on Shipping data integrity.
+     */
+    public Shipment() {
+        //created!
     }
     
     /**
