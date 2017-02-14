@@ -20,6 +20,7 @@ public class Item {
     
     /**
      * Constructor for creating a new Item.
+     * 
      * You MUST pass in a unique item number, a description, an on hand quantity, a cost, and a price.
      * Passing in each of these parameters will create a complete Item object that other applications
      * can use. Gross margins will automatically be calculated.
@@ -35,6 +36,7 @@ public class Item {
     
     /**
      * Copy constructor for creating a new Item from an existing one.
+     * 
      * This constructor takes in an existing Item object and creates a deep copy of it
      * that other applications can use. Creates a carbon copy.
      * @param i : Item
@@ -48,6 +50,16 @@ public class Item {
         GROSSMARGIN = i.getGMPercent();
     }
     
+    /**
+     * No argument constructor.
+     * 
+     * Creates a completely blank item.
+     * WARNING! Not a good idea to call this method unless you plan on immediately 
+     * assigning its fields. Otherwise bad things will happen.
+     */
+    public Item() {
+        //Created!
+    }
     
     /**
      * Accessor for the item number.
