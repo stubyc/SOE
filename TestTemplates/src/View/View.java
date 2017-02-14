@@ -14,14 +14,14 @@ import javax.swing.*;
  * @author cestuby
  */
 public class View implements TemplateView {
-    
-   
+    private JFrame frame;
+    private JPanel panel;
     
     public View(String s) {
-       JFrame frame = new JFrame(s);
+       frame = new JFrame(s);
        frame.setSize(700, 800);
        frame.setLayout(new GridLayout(3,1));
-       JPanel panel = new JPanel();
+       panel = new JPanel();
        panel.setLayout(new FlowLayout());
        frame.add(panel);
        frame.setVisible(true);
