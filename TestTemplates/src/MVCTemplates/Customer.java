@@ -18,6 +18,7 @@ public class Customer {
     
     /**
      * Constructor for Customer object.
+     * 
      * You MUST pass in an account number, a name, an address and a credit limit.
      * Calling this constructor and supplying the necessary parameters creates a complete customer
      * object that can be used by other applications.
@@ -32,6 +33,7 @@ public class Customer {
     
     /**
      * Copy constructor for creating a new Customer cloned from an existing Customer.
+     * 
      * Calling this constructor and providing an existing Customer object as a parameter creates
      * a complete Customer clone of the existing one that can be used by other applications.
      * @param c : Customer 
@@ -41,6 +43,16 @@ public class Customer {
        NAME = c.getCustomerName();
        ADDRESS = c.getAddress();
        CREDIT = c.getCredit();
+    }
+    
+    /**
+     * No argument constructor.
+     * 
+     * Creates a totally blank Customer object.
+     * WARNING! Don't call this method unless you will immediately populate the fields.
+     */
+    public Customer() {
+        //Created!
     }
     
     /**
